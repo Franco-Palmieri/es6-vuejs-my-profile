@@ -26,17 +26,6 @@ const data = {
         ]
     }
 };
-//Scrivere nuovo post
-var newPost = document.querySelector(".send");
-var writePost = document.querySelector(".newText")
-
-newPost.addEventListener("click", function (){
-    data.myProfile.posts.push({
-        text: writePost,
-        date:"21/06/2021"
-    })
-    writePost="";
-});
 
 var userDetailHtml = document.querySelector(".user-details")
 
@@ -61,7 +50,7 @@ data.myProfile.posts.forEach((post) => {
             <div class="user-name">${data.myProfile.details.name} ${data.myProfile.details.surname}</div>
             <div class="post-date">${post.date}</div>
         </div>
-        <div class="delete" @click="deletePost(index)"><i class="fas fa-backspace"></i></div>
+        <div class="delete""><i class="fas fa-backspace"></i></div>
     </div> 
     <div class="post-text">
         ${post.text}
@@ -81,5 +70,17 @@ data.myProfile.posts.forEach((post) => {
     // e il tutto dentro postListHtml.innerHtml.
 
     postListHtml.innerHTML += `<div class="post"> ${postHtml} </div>`
+    
+});
+//Scrivere nuovo post
+var newPost = document.querySelector(".send");
+var writePost = document.querySelector(".newText").value;
+
+postListHtml.innerHTML += newPost.addEventListener("click", function (){
+    data.myProfile.posts.push({
+        text: writePost.value,
+        date:"21/06/2021",
+    })
+    writePost.value= "";
 });
 
