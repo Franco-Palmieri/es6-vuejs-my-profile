@@ -37,8 +37,8 @@ new Vue(
             //Funzione per pushare il newPost
             //Quando premiamo il testo CREA
             pushPost: function (){
-                myProfile.posts.push({
-                    text:"this.newPost",
+                this.myProfile.posts.push({
+                    text: this.newPost,
                     date:"17-06-2021"
                 });
                 this.newPost= "";
