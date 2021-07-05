@@ -43,6 +43,10 @@ new Vue(
                 });
                 this.newPost= "";
             },
+            //Funzione per eliminare un post
+            deletePost: function (index){
+                this.myProfile.posts.splice(index, 1);
+            }
         }
     }
 );

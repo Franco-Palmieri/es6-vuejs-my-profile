@@ -88,6 +88,11 @@
 .post-details .details {
     margin-left: 15px;
 }
+.delete{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
 
 .post-details .details .user-name {
     font-weight: bold;
